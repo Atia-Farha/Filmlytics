@@ -92,21 +92,23 @@ function App() {
           <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         </header>
 
-        {trendingMovies.length > 0 && (
+        {isTrendingLoading ? (
+          <Spinner />
+        ) : trendingMovies.length > 0 ? (
           <section className='trending'>
             <h2>Trending Movies</h2>
 
             <ul>
               {trendingMovies.map((movie, index) => (
-                <li key={movie.id}>
+                <li key={movie.$id}>
                   <p>{index + 1}</p>
-                  <p>{movie.title}</p>
-                  <img src={movie.poster_url ? movie.poster_url : '/no-movie.png'} alt={movie.title} />
+                  <p>{movie.search_term}</p>
+                  <img src={movie.poster_url || '/no-movie.png'} alt={movie.search_term} />
                 </li>
               ))}
             </ul>
           </section>
-        )}
+        ) : ''}
 
         <section className='all-movies mt-5'>
           <h2>All Movies</h2>

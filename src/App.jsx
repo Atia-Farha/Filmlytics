@@ -26,7 +26,7 @@ function App() {
   const [isSearchLoading, setIsSearchLoading] = useState(false);
   const [isTrendingLoading, setIsTrendingLoading] = useState(false);
 
-  useDebounce(() => setDebouncedSearchTerm(searchTerm), 500, [searchTerm]);
+  useDebounce(() => setDebouncedSearchTerm(searchTerm), 1000, [searchTerm]);
 
   const fetchMovies = async (query) => {
     setIsSearchLoading(true);
@@ -102,7 +102,7 @@ function App() {
               {trendingMovies.map((movie, index) => (
                 <li key={movie.$id}>
                   <p>{index + 1}</p>
-                  <img src={movie.poster_url || '/no-movie.png'} alt={movie.search_term} />
+                  <img src={movie.poster_url || '/no-poster.png'} alt={movie.search_term} />
                 </li>
               ))}
             </ul>

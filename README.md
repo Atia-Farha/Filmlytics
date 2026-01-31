@@ -1,16 +1,39 @@
-# React + Vite
+# Filmlytics
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A movie analytics and discovery platform providing rich movie data, trending tracking and real-time search powered by TMDB.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Effortless Movie Search**: Simply type in a movie title or keyword, and instantly get a curated list of matching films without any delays or hassle.
+- **Movie Details and Ratings**: Explore movie details, cast, crew, genres, and ratings with a comprehensive overview, making it easy to find the perfect movie for your taste.
+- **Trending Movies Spotlight**: See what's hot right now with a dedicated section showing the top-searched movies by other users, updated in real-time.
+- **User-Friendly Interface**: A clean, modern design with a eye-catching UI that's easy to navigate and make browsing feel like flipping through a digital cinema catalog.
+- **Fast and Reliable Loading**: Smooth performance with quick results and helpful loading indicators, so you never wait longer than necessary.
 
-## React Compiler
+### Technologies and Tools Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React.js 19
+- TailwindCSS 4
+- React-use
+- TMDB API
+- Appwrite
+- Vite
+- ESLint
+- Git
+- GitHub
+- Vercel
 
-## Expanding the ESLint configuration
+### Concepts and Skills Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **State Management and Reactivity**: Managed multiple states in a React app, synchronized them (e.g., debouncing search input to update movie lists) and trigger re-renders efficiently.
+- **Debouncing Techniques**: Debounced user inputs to optimize performance, reduced API rate limiting risks and improved user experience in search-heavy applications.
+- **Asynchronous Programming**: Used async/await for handling promises in API fetches, including try-catch blocks for error handling, setting loading states and displaying error messages.
+- **Conditional Rendering**: Implemented JSX patterns for conditionally showing UI elements based on states (e.g., Spinner during loading, error messages, or movie lists when data is available).
+- **API Endpoint Management**: Built dynamic API URLs (e.g., switching between search and discover endpoints), encoded query parameters and authenticated requests with bearer tokens.
+- **Database CRUD Operations**: Used serverless database interactions with Appwrite, including querying for existing documents, updating counts, creating new entries with unique IDs and sorting results.
+- **Metrics Tracking**: Implemented a system to track and update search counts associating them with movie data and fetching trending items based on aggregated data.
+- **Error Handling and User Feedback**: Developed robust error handling (e.g., console logging, user-facing messages) and loading indicators to create a resilient and user-friendly app.
+- **Performance Optimization**: Handled data fetching in effects to avoid unnecessary re-fetches, limited query results (e.g., top 5 trending), and used efficient mapping for rendering lists without performance bottlenecks.
+- **Full-Stack Integration**: Connect React frontend with external API *(TMDB)* and backend service *(Appwrite)* managing data flow from user input to persistent storage and back to the UI.
+- **Security Practices**: Used environment variables to avoid hardcoding sensitive keys and handled potential null/undefined values (e.g., poster_path checks) to prevent runtime errors.
+- **UI/UX Best Practices**: Built an intuitive interface with a hero banner, search bar, trending section and movie grid, focusing on accessibility (e.g., alt texts for images) and visual appeal.
